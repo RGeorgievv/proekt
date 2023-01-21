@@ -1,0 +1,18 @@
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<style type="text/css">
+td {border: 1px solid black; font-family: Verdana; font-size:13px;}
+.theader {background-color:#505050; color:white; text-align:center; font-weight:bold;}
+</style>
+</head>
+<body>
+<table width="500">
+	<tr class="theader">
+		<td align="center">Име на специалност</td>
+		<td align="center">Брой студенти</td>
+	</tr>
+	<?php print $specialnosti;?>
+</table>
+</body>
+</html>

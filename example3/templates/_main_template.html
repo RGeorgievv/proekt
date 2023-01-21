@@ -1,0 +1,32 @@
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<style type="text/css">
+td {border: 1px solid black; font-family: Verdana; font-size:13px;}
+.theader {background-color:#505050; color:white; text-align:center; font-weight:bold;}
+</style>
+</head>
+<body>
+
+<form method="get">
+	Специалност:
+
+	<select name="pate">
+		<option value="0">all</option>
+		<?php print $specialnosti;?>
+	</select> 
+	<input type="Submit" value="submit">
+</form>
+
+
+<table width="500">
+	<tr class="theader">
+		<td align="center">ФН</td>
+		<td align="center">Име</td>
+		<td align="center">Фамилия</td>
+		<td align="center">Специалност</td>
+	</tr>
+	<?php print $studenti;?>
+</table>
+</body>
+</html>
