@@ -1,0 +1,81 @@
+// tuk pishem zaiavkata
+
+$sql = 'SELECT firstName,lastName,FN,name
+FROM courses,students
+where courses.id=students.courseId ';  //заявка за име,фамилия,ФН,специалност на студента
+
+--------------------------------
+$sql = 'SELECT firstName,lastName,FN,name,gender
+FROM courses,students
+where courses.id=students.courseId '; //заявка за име,фамилия,ФН,специалност и пол на студента
+--------------------------
+
+$sql = 'SELECT firstName,lastName,FN,name,year
+FROM courses,students
+where courses.id=students.courseId '; //заявка за име,фамилия,ФН,специалност и година(курс) на студента
+
+-------------------------------------------
+$sql = 'SELECT firstName,lastName,FN,name,studyMode
+FROM courses,students
+where courses.id=students.courseId '; //заявка за име,фамилия,ФН,специалност и тип на обучение на студента
+-------------------------------------
+$sql = 'SELECT firstName,lastName,FN,name,id
+FROM courses,students
+where courses.id=students.courseId '; //заявка за име,фамилия,ФН,специалност и id на специалността
+------------------------------------
+???????????
+$sql = 'SELECT firstName,lastName,students.FN,name,grade
+FROM courses,students,evaluation
+where courses.id=students.courseId
+AND students.FN=evaluation.FN';  //заявка за име,фамилия,ФН,специалност и оценка получена от дадения студент по дадената дисциплина
+----------------------------------
+???????????????
+$sql = 'SELECT students.firstName,students.lastName,students.FN,name,professors.SSN
+FROM courses,students,evaluation,professors
+where courses.id=students.courseId
+AND evaluation.SSN=professors.SSN'; //заявка за име,фамилия,ФН,специалност и EGN на професора
+--------------------------------------------------
+???????????????
+$sql = 'SELECT firstName,lastName,students.FN,courses.name,subjectId
+FROM courses,students,evaluation,subjects
+where courses.id=students.courseId
+AND evaluation.subjectId=subjects.id'; //заявка за име,фамилия,ФН,специалност и ID на дисциплината
+-------------------------------------------------
+$sql = 'SELECT firstName,lastName,students.FN,name,date
+FROM courses,students,evaluation
+where courses.id=students.courseId
+group by students.FN'; //заявка за име,фамилия,ФН,специалност и дата на поставяне на оценката
+------------------------------------------------
+$sql = 'SELECT firstName,lastName,contractType,gender
+FROM professors';  //заявка за име,фамилия,Тип договор и пол на професорите
+---------------------------------------
+$sql = 'SELECT students.firstName,students.lastName,subjects.name,grade
+FROM subjects,students,evaluation,professors
+where students.FN=evaluation.FN
+AND evaluation.subjectId = subjects.id
+and professors.lastName like "Иванов"
+group by students.firstName';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
