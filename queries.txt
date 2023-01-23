@@ -56,26 +56,24 @@ AND evaluation.subjectId = subjects.id
 and professors.lastName like "Иванов"
 group by students.firstName';
 
+------------------------------------------------------------------------------
+НЕПАРАМЕТРИЗИРАНА ЗАЯВКА ДА ЗНАЕШ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// $sql ='select students.firstName as ime, students.lastName as fam, grade, name 
+// from students, professors, evaluation, subjects
+// where students.FN = evaluation.FN
+// and evaluation.SSN = professors.SSN
+// and professors.firstName = "Живко"
+// and professors.lastName = "Иванов"
+// and evaluation.subjectId = subjects.id';
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ПАРАМЕТРИЗИРАНА
+select students.firstName as ime, students.lastName as fam, grade, name 
+from students, evaluation, subjects
+where students.FN = evaluation.FN
+and evaluation.SSN = ?
+and evaluation.subjectId = subjects.id
